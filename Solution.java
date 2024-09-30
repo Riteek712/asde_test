@@ -3,14 +3,17 @@ import java.util.Scanner;
 
 public class Solution {
      // Function to get the highest 's' skip steps from the array
-     public static int[] getSkipIndices(int[] powers, int s) {
-        Arrays.sort(powers);
-        int[] skipSteps = new int[s];
-        for (int i = 0; i < s; i++) {
-            skipSteps[i] = powers[powers.length - 1 - i];  // Getting the top 's' powers
-        }
-        return skipSteps;
+public static int[] getSkipIndices(int[] powers, int s) {
+    // Create a copy of the original array
+    int[] copy = Arrays.copyOf(powers, powers.length);
+    // Sort the copied array
+    Arrays.sort(copy);
+    int[] skipSteps = new int[s];
+    for (int i = 0; i < s; i++) {
+        skipSteps[i] = copy[copy.length - 1 - i];  // Getting the top 's' powers
     }
+    return skipSteps;
+}
 
     // Function to check if an array contains a specific target
     public static boolean contains(int[] arr, int target) {
@@ -50,8 +53,16 @@ public class Solution {
                 if (rechargeCount > 0) {
                     System.out.println("Abhimanyu recharges at circle " + (i + 1));
                     power = initialPower;  // Recharge Abhimanyu's power
+                    System.out.println("Abhimanyu " + power + " fights enemy at circle " + (i + 1) + " with power " + enemyPowers[i]);
+                power -= enemyPowers[i];
                     rechargeCount--;
                 } else {
+                    // If recharges are exhausted, skips will be used.
+                    if(skipCount>0){
+                        System.out.println("Abhimanyu skips at circle " + (i + 1));
+                skipCount--;  // Decrease the skip count
+                continue;
+                    }
                     // If no skips or recharges left, Abhimanyu loses
                     System.out.println("Abhimanyu loses at circle " + (i + 1));
                     return false;
