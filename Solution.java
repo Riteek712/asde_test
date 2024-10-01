@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Solution {
      // Function to get the highest 's' skip steps from the array
-public static int[] getSkipIndices(int[] powers, int s) {
+public static int[] getSkipPowers(int[] powers, int s) {
     // Create a copy of the original array
     int[] copy = Arrays.copyOf(powers, powers.length);
     // Sort the copied array
@@ -33,7 +33,7 @@ public static int[] getSkipIndices(int[] powers, int s) {
         enemyPowers[3] += enemyPowers[2] / 2;
         enemyPowers[7] += enemyPowers[6] / 2;
         
-        int[] skipSteps = getSkipIndices(enemyPowers, skipCount);
+        int[] skipSteps = getSkipPowers(enemyPowers, skipCount);
 
         // Loop through the enemies in the Chakravyuha
         for (int i = 0; i < 11; i++) {
@@ -50,7 +50,7 @@ public static int[] getSkipIndices(int[] powers, int s) {
                 power -= enemyPowers[i];  // Reduce Abhimanyu's power after the fight
             } else {
                 // If Abhimanyu's power is less than the enemy's power
-                if (rechargeCount > 0) {
+                if (rechargeCount > 0 && initialPower > enemyPowers[i]) {
                     System.out.println("Abhimanyu recharges at circle " + (i + 1));
                     power = initialPower;  // Recharge Abhimanyu's power
                     System.out.println("Abhimanyu " + power + " fights enemy at circle " + (i + 1) + " with power " + enemyPowers[i]);
