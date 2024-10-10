@@ -108,19 +108,19 @@ The solution simulates Abhimanyu's journey through the Chakravyuha, handling bat
 8. **Circle 7 (Power: 35)**: Abhimanyu fights.
    - Remaining power: `90 - 35 = 55`
 
-9. **Recharge 2**: Abhimanyu recharges before Circle 8.
-   - Recharged power: 150
-
-10. **Circle 8 (Power: 63)**: Abhimanyu fights.
-    - Remaining power: `150 - 63 = 87`
+9. **Circle 8 (Power: 63)**: Abhimanyu skips (2/2 skips used).
 
 11. **Circle 9 (Power: 50)**: Abhimanyu fights.
-    - Remaining power: `87 - 50 = 37`
+    - Remaining power: `55 - 50 = 5`
 
-12. **Circle 10 (Power: 55)**: Abhimanyu skips (2/2 skips used).
+12. **Recharge 2**: Abhimanyu recharges before Circle 10.
+   - Recharged power: 150
 
-13. **Circle 11 (Power: 25)**: Abhimanyu fights.
-    - Remaining power: `37 - 25 = 12`
+13. **Circle 10 (Power: 150)**: Abhimanyu fights.
+   - Remaining power: `150 - 55 = 95`
+
+14. **Circle 11 (Power: 25)**: Abhimanyu fights.
+    - Remaining power: `95 - 25 = 70`
 
 **Result:** Abhimanyu successfully crosses the Chakravyuha.
 
